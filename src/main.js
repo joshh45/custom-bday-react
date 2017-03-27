@@ -2,10 +2,11 @@ import './main.scss';
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Layout from './components/Layout.js';
 
 
 
 ReactDOM.render(
-  <h1> booyah </h1>,
+  <Layout />,
   document.getElementById('app')
 );
