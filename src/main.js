@@ -1,12 +1,23 @@
 import './main.scss';
 import 'babel-polyfill';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Layout from './components/Layout.js';
+import {render} from 'react-dom';
+import {Router, Route, browserHistory} from 'react-router';
+
+import {Home} from './components/Home';
+import {Message} from './components/Message';
 
 
+class App extends React.Component {
+  render() {
+    return (
+      <Router history={browserHistory}>
+          <Route path={'home'} component={Home}/>
+          <Route path= {'message'} component={Message}/>
+      </Router>
+    );
+  }
+}
 
-ReactDOM.render(
-  <Layout />,
-  document.getElementById('app')
-);
+
+render(<App />, window.document.getElementById('app'));
